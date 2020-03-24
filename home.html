@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>To_do</title>
+{% endblock %}
+
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+
+    <p>
+        <h3>Today</h3>
+        <small>{{ todo.date_posted }}</small>
+    </p>
+    <hr>
+</div>
+
+<div class="container">
+    <form action='/home' method='POST'>
+        <textarea class="form-control" placeholder="Enter Task" aria-label="task" name='task' id="task"
+            rows="2"></textarea>
+        <input type='submit' value='+Add' class='btn btn-dark'>
+    </form>
+    <br>
+    <hr>
+    <br>
+    {% for undone in todo %}
+    <h5 style="display:inline">{{ undone.task}}</h5>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    <a href="/home/done/{{ undone.id }}" class="btn btn-secondary"  style="display:inline">Done</a>
+    <div class="btn-group" style="display:inline">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            ...
+        </button>
+        <div class="dropdown-menu" >
+            <a class="btn btn-dark" href="/home/delete/{{ undone.id }}">Delete</a>
+            <a class="btn btn -dark" href="/home/update/{{ undone.id}}" action="/home" method="POST">Update</a>
+        </div>
+    <br>
+    <br>
+    <hr>
+        {% endfor%}
+    </div>
+
+
+
+    {% endblock %}

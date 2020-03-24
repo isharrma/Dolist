@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Update</title> 
+{% endblock %}
+
+{% block body %}
+
+<h2>Update:</h2>
+<br>
+<br>
+<br>
+<form action='/home' method='POST'>
+    <textarea class="form-control"  aria-label="task" name='task' id="task"
+        rows="2">{{ task.task}}</textarea>
+    <input type='submit' value='+Update' class='btn btn-dark'>
+</form>
+<hr>
+
+{% endblock%}
