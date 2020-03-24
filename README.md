@@ -12,7 +12,9 @@ Update : If by mistake you have written somethig wrong or you want to edit your 
 Delete : If you for some reason no longer need to the task ,you can just delete it.
 
 # Future Scope
-I wish to add the functionality of sign up ,so that a user can login once he sign-up.
+1)I wish to add the functionality of sign up ,so that a user can login once he sign-up.
+2) Add radio buttons instead of "Done" button.
+3) Make it more graphically applealing.
 
 ![](task.PNG)
 
